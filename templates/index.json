@@ -11,8 +11,66 @@
   "sections": {
     "hero_ywXn9V": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+        "bg_mobile": "shopify://shop_images/Main_one.webp",
+        "bg_desktop": "shopify://shop_images/Main_one.webp",
+        "text_color": "#fff",
+        "title": "<p>Buy and win this Volkswagen Camper Van + 20k Cash + DJI Mini 4 Pro Drone</p>",
+        "description": "Dreaming of the ultimate road trip? Now's your change to own an iconic vintage adventure van!",
+        "cta_text": "Get Entries",
+        "cta_url": "shopify://collections",
+        "start_year": 2025,
+        "start_month": 7,
+        "start_day": 1,
+        "start_hours": 0,
+        "start_minute": 0
+      }
+    },
+    "featured_products_LEUHp4": {
+      "type": "featured-products",
+      "blocks": {
+        "product_K9TWtE": {
+          "type": "product",
+          "settings": {
+            "product": "bronze-easy-entry"
+          }
+        },
+        "product_mRty6z": {
+          "type": "product",
+          "settings": {
+            "product": "silver-easy-entry"
+          }
+        },
+        "product_piD4PK": {
+          "type": "product",
+          "settings": {
+            "product": "gold-easy-entry"
+          }
+        },
+        "product_PJXzzK": {
+          "type": "product",
+          "settings": {
+            "product": "platinum-easy-entry"
+          }
+        }
+      },
+      "block_order": [
+        "product_K9TWtE",
+        "product_mRty6z",
+        "product_piD4PK",
+        "product_PJXzzK"
+      ],
+      "name": "Easy Entries",
+      "settings": {
+        "title": "<p>Want some easy entries?</p>",
+        "description": "Buy them in the easiest wat possible and get more chances to win!",
+        "button_text": "Shop All",
+        "button_url": "shopify://collections"
+      }
     }
   },
-  "order": ["hero_ywXn9V"]
+  "order": [
+    "hero_ywXn9V",
+    "featured_products_LEUHp4"
+  ]
 }
