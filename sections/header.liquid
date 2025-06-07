@@ -1,0 +1,97 @@
+{% assign settings = section.settings %}
+
+<site-header>
+  <div class="fixed z-50 left-0 right-0">
+    {% unless section.settings.announcement_text == blank %}
+      {% render 'announcement-bar'
+        , text: settings.announcement_text %}
+    {% endunless %}
+    <div class="site-header lg:py-[18px] flex items-center py-4 transition-all duration-500 text-white">
+      <div class="site-container flex justify-between">
+        <div class="lg:hidden">
+          <button class="menu-toggle group grid gap-1 content-center h-full">
+            <span class="bg-white w-10 h-[2px] flex transform transition duration-500 origin-center group-[.active]:rotate-45 group-[.active]:translate-y-[0.15rem]"></span>
+            <span class="bg-white w-10 h-[2px] flex transform transition duration-500 origin-center group-[.active]:-rotate-45 group-[.active]:-translate-y-[0.25rem]"></span>
+          </button>
+        </div>
+        <div class="w-16 lg:w-24">
+          <a href="/" class="block">{% render 'logo' %}</a>
+        </div>
+        <div class="items-center gap-6 hidden lg:flex">
+          {% for link in settings.menu.links %}
+            <a href="{{ link.url }}" class="group relative inline-block text-sm font-body-medium uppercase transition-all duration-500">
+              {{ link.title }}
+              <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-current transition-all duration-500 group-hover:w-full"></span>
+            </a>
+          {% endfor %}
+        </div>
+        <div class="flex gap-9 lg:bg-white rounded-full desktop-menu lg:text-gray-900 lg:px-6 lg:transition-all lg:duration-500">
+          <div class="flex items-center gap-6">
+            <a class="lg:hover:opacity-50 lg:transition-all lg:duration-500 hidden lg:block" href="/account">{% render 'icon-account' %}</a>
+            <div class="w-[1px] h-[23.5px] bg-gray-300 hidden lg:block"></div>
+            <button class="lg:hover:opacity-50 lg:transition-all lg:duration-500">{% render 'icon-cart' %}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% render 'mobile-menu'
+    , menus: section.settings.menu
+    , wp_url: settings.wp_url
+    , ig_url: settings.ig_url
+    , tk_url: settings.tk_url
+    , fb_url: settings.fb_url
+    , x_url: settings.x_url
+    , cta_url: settings.cta_url
+    , cta_text: settings.cta_text
+  %}
+</site-header>
+
+{% schema %}
+  {
+    "name": "Cabecera",
+    "tag": "header",
+    "settings": [
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement Bar Text"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Links de navegación"
+      },
+      {
+        "type": "url",
+        "id": "wp_url",
+        "label": "Link Whatsapp"
+      },
+      {
+        "type": "url",
+        "id": "ig_url",
+        "label": "Link Instagram"
+      }, {
+        "type": "url",
+        "id": "fb_url",
+        "label": "Link Facebook"
+      }, {
+        "type": "url",
+        "id": "tk_url",
+        "label": "Link Tiktok"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cabecera",
+        "settings": {
+          "menu": "header-menu",
+          "wp_url": "#",
+          "ig_url": "https://www.instagram.com/pasaje69/",
+          "fb_url": "https://www.facebook.com/profile.php?id=100075638299581",
+          "tk_url": "https://www.tiktok.com/@pasaje69home"
+        }
+      }
+    ]
+  }
+{% endschema %}

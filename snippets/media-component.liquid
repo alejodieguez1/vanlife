@@ -1,0 +1,70 @@
+{% unless video_desktop == blank %}
+  <div class="absolute top-0 left-0 w-full h-full hidden lg:block {{ custom_class }}">
+    <site-video>
+      {% if is_icon_play_button == true %}
+        <div class="absolute inset-0 flex items-center justify-center w-full h-full z-20 play-button-js bg-black bg-opacity-10 cursor-pointer">
+          {% render 'icon-play-button' %}
+        </div>
+      {% endif %}
+      <video
+        {% unless start_pause %}
+        autoplay
+        {% endunless %}
+        muted
+        playsinline
+        preload="metadata"
+        loop
+        class="w-full h-full object-cover object-center absolute top-0 left-0 z-10"
+        poster="{{ video_poster_desktop | image_url }}">
+        {% for source in video_desktop.sources %}
+          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+        {% endfor %}
+      </video>
+    </site-video>
+  </div>
+{% endunless %}
+
+{% unless video_mobile == blank %}
+  <div class="absolute top-0 left-0 w-full h-full lg:hidden {{ custom_class }}">
+    <site-video>
+      {% if is_icon_play_button == true %}
+        <div class="absolute inset-0 flex items-center justify-center w-full h-full z-20 play-button-js bg-black bg-opacity-10">
+          {% render 'icon-play-button' %}
+        </div>
+      {% endif %}
+      <video
+        {% unless start_pause %}
+        autoplay
+        {% endunless %}
+        muted
+        playsinline
+        loop
+        class="w-full h-full object-cover object-center absolute top-0 left-0 z-10"
+        poster="{{ video_poster_mobile | image_url }}">
+        {% for source in video_mobile.sources %}
+          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+        {% endfor %}
+      </video>
+    </site-video>
+  </div>
+{% endunless %}
+
+{% unless desktop_image == blank %}
+  <img
+    class="hidden lg:block absolute w-full h-full top-0 left-0 {% if contain %} object-contain {% else %} object-cover {% endif %} {{ custom_class }}"
+    alt="{{ desktop_image.alt }}"
+    src="{{ desktop_image | image_url }}"
+    loading="lazy"
+    width="auto"
+    height="auto">
+{% endunless %}
+
+{% unless mobile_image == blank %}
+  <img
+    class="lg:hidden absolute w-full h-full top-0 left-0 {% if contain %} object-contain {% else %} object-cover {% endif %} {{ custom_class }}"
+    alt="{{ mobile_image.alt }}"
+    src="{{ mobile_image | image_url }}"
+    loading="lazy"
+    width="auto"
+    height="auto">
+{% endunless %}

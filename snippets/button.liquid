@@ -1,0 +1,41 @@
+{% liquid
+  case button_class
+    when 'cloud'
+      assign button_classes = 'bg-white text-dark-gray'
+      assign icon_class = 'bg-grass text-white'
+    when 'chocolate'
+      assign button_classes = 'bg-chocolate text-white'
+      assign icon_class = 'bg-white text-chocolate'
+    when 'grass'
+      assign button_classes = 'bg-grass text-white'
+      assign icon_class = 'bg-white text-chocolate'
+  endcase
+%}
+
+{% if button_url %}
+  <a href="{{ button_url }}" class="button {{ button_classes }}  w-full sm:w-fit sm:!px-20 relative group {{ custom_class }}">
+    <span class="underline">{{ button_text }}</span>
+    {% unless aditional_text == blank %}
+      <span>{{ aditional_text }}</span>
+    {% endunless %}
+    {% unless no_arrow %}
+      <div class="w-10 h-10 absolute right-3 {{ icon_class }} flex items-center justify-center rounded-full overflow-hidden group-hover:scale-125 transition-all duration-500">
+        <div class="transform -translate-x-[50px] group-hover:translate-x-[12px] transition-all duration-500">{% render 'icon-arrow-right' %}</div>
+        <div class="transform -translate-x-[12px] group-hover:translate-x-[50px] transition-all duration-500">{% render 'icon-arrow-right' %}</div>
+      </div>
+    {% endunless %}
+  </a>
+{% else %}
+  <button type="button" class="button {{ button_classes }}  w-full sm:w-fit sm:!px-20 relative group {{ custom_class }}">
+    <span class="underline">{{ button_text }}</span>
+    {% unless aditional_text == blank %}
+      <span>{{ aditional_text }}</span>
+    {% endunless %}
+    {% unless no_arrow %}
+      <div class="w-10 h-10 absolute right-3 {{ icon_class }} flex items-center justify-center rounded-full overflow-hidden group-hover:scale-125 transition-all duration-500">
+        <div class="transform -translate-x-[50px] group-hover:translate-x-[12px] transition-all duration-500">{% render 'icon-arrow-right' %}</div>
+        <div class="transform -translate-x-[12px] group-hover:translate-x-[50px] transition-all duration-500">{% render 'icon-arrow-right' %}</div>
+      </div>
+    {% endunless %}
+  </button>
+{% endif %}

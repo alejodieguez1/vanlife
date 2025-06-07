@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon != blank -%}
+      <link
+        rel="icon"
+        type="image/png"
+        href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %}
+        &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %}
+        &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %}
+        &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    <style>
+      @font-face {
+        font-family: 'Rod';
+        src: url('https://cdn.shopify.com/s/files/1/0823/5882/9249/files/rod.woff?v=1746806337') format('woff');
+      }
+
+      @font-face {
+        font-family: 'Editorial';
+        src: url('https://cdn.shopify.com/s/files/1/0823/5882/9249/files/EditorialNew-Light.woff2?v=1746819597') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'Mori SemiBold';
+        src: url('https://cdn.shopify.com/s/files/1/0823/5882/9249/files/PPMori-SemiBold.woff2?v=1746820183') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'Mori Regular';
+        src: url('https://cdn.shopify.com/s/files/1/0823/5882/9249/files/PPMori-Regular.woff2?v=1746820183') format('woff2');
+      }
+    </style>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'web-components.js' | asset_url }}" defer></script>
+
+    {%- capture cfh -%}{{ content_for_header }}{%- endcapture -%}
+    {{ cfh }}
+
+    <link rel="stylesheet" href="{{ 'tailwind.style.css' | asset_url }}">
+    <link
+      rel="preload"
+      href="{{ 'swiper-bundle.min.css' | asset_url }}"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+
+  </head>
+
+  <body class="h-full font-body text-gray-900 bg-cloud">
+    {% section 'header' %}
+    <main>
+      {{ content_for_layout }}
+    </main>
+    {% section 'footer' %}
+
+    <script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smooth: true
+        });
+      
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+      
+        requestAnimationFrame(raf);
+    </script>
+
+  </body>
+</html>

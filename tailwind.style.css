@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#preview-bar-iframe,
+#PBarNextFrameWrapper {
+  @apply !hidden;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    padding-bottom: 0 !important;
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+}
+body {
+  @apply font-body;
+}
+input[type="search"] {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  @apply hidden;
+}
+
+.site-container {
+  @apply px-4 lg:px-12 w-full max-w-[1440px] mx-auto;
+}
+
+/* Headings */
+
+.h1 {
+  @apply text-5xl lg:text-6xl leading-[100%];
+}
+
+.h2 {
+  @apply text-4xl lg:text-5xl leading-[100%];
+}
+
+.h3 {
+  @apply text-3xl lg:text-4xl;
+}
+
+.h4 {
+  @apply text-2xl lg:text-3xl leading-[100%];
+}
+
+.h5 {
+  @apply text-xl lg:text-2xl leading-[100%];
+}
+.hero-h1 {
+  @apply text-4xl lg:text-6xl !leading-[1.1] font-body-bold;
+}
+.hero-h1 strong,
+.h2 strong,
+.h3 strong,
+.h4 strong,
+.h5 strong {
+  @apply font-body-bold;
+}
+
+.hero-h1 em,
+.h2 em,
+.h3 em,
+.h4 em,
+.h5 em {
+  @apply font-heading;
+}
+
+/* Buttons */
+
+.button {
+  @apply h-[60px] px-5 flex items-center justify-center uppercase text-xs sm:text-sm rounded-full transition-all duration-200 cursor-pointer;
+}
+.button--slate {
+  @apply h-[60px] px-5 flex items-center justify-center uppercase text-xs sm:text-sm bg-dark-gray text-white rounded-full transition-all duration-200 cursor-pointer;
+}
+.button--grass {
+  @apply h-[60px] px-5 flex items-center justify-center uppercase text-xs sm:text-sm bg-grass text-white rounded-full transition-all duration-200 cursor-pointer;
+}
+
+.button--chocolate {
+  @apply h-[60px] px-5 flex items-center justify-center uppercase text-xs sm:text-sm bg-chocolate text-white rounded-full transition-all duration-200 cursor-pointer;
+}
+
+.button--ghosted {
+  @apply h-[52px] px-4 flex items-center justify-center font-heading text-base capitalize bg-transparent border border-white text-white rounded-xl active:bg-dark-gray lg:hover:bg-dark-gray lg:hover:border-dark-gray transition-all duration-200 cursor-pointer;
+}
+.button--gold {
+  @apply text-gray-900 border border-gray-900 lg:hover:text-gold active:border-gray-500 active:text-gray-500 transition-all duration-200;
+}
+.button--blue {
+  @apply bg-transparent text-white border-white border lg:hover:bg-blue-400 lg:hover:border-blue-400 active:border-blue-700 active:bg-blue-300 active:text-blue-700 transition-all duration-200;
+}
+.button--white {
+  @apply text-white border border-white lg:hover:text-blue-400 lg:hover:border-white lg:hover:bg-white active:border-blue-700 active:text-blue-700 active:bg-blue-200 transition-all duration-200;
+}
+.button:disabled {
+  @apply bg-blue-200 cursor-not-allowed;
+}
+
+/* Site Header*/
+site-header .menu.active {
+  @apply translate-x-0;
+}
+
+site-header .site-header.scrolled .desktop-menu {
+  @apply lg:!bg-grass lg:!shadow-none lg:text-white lg:transition-all lg:duration-500;
+}
+
+site-header .site-header.scrolled {
+  @apply text-gray-900 bg-white transition-all duration-500;
+}
+
+site-header .site-header.active {
+  @apply text-gray-900 transition-all duration-500;
+}
+
+site-header .site-header.scrolled .menu-toggle span {
+  @apply bg-gray-900 transition-all duration-500;
+}
+
+site-header .site-header.active .menu-toggle span {
+  @apply bg-gray-900 transition-all duration-500;
+}
+
+/* Text Input */
+
+.text-input {
+  @apply bg-transparent border rounded-xl border-gray-300 h-[52px] outline-0 px-4 w-full relative;
+}
+
+.text-input--inverted {
+  @apply text-input !border-white;
+}
+
+.text-input label {
+  @apply absolute top-[1px] left-11 grid h-full items-center pointer-events-none transition-all duration-300;
+}
+
+.text-input input {
+  @apply w-full h-full outline-none bg-transparent;
+}
+
+.text-input.active label,
+.text-input input:focus ~ label,
+.text-input input:not(:placeholder-shown) ~ label {
+  @apply -translate-y-[0.85rem] text-xs;
+}
+
+/* Carousel Pagers */
+
+.pager button.active,
+carousel-pager button.active {
+  @apply bg-grass transition-opacity duration-300;
+}
+
+/* Accordions */
+
+details > summary {
+  @apply list-none cursor-pointer;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details > .content {
+  @apply max-h-0 overflow-hidden transition-all duration-300;
+}
+
+details[open] > .content {
+  @apply transition-all duration-300;
+}
+
+.swiper-pagination {
+  @apply relative flex justify-center bottom-[unset];
+}
+
+carousel-pager button.active,
+.swiper-pagination .active {
+  @apply opacity-100 w-9 lg:w-14 transition-all duration-200;
+}
+
+/* Custom Margins */
+
+@media screen and (min-width: 1440px) {
+  .custom-mr {
+    margin-right: calc(((100vw - 1440px) / 2)) !important;
+  }
+  .custom-ml {
+    margin-left: calc(((100vw - 1440px) / 2)) !important;
+  }
+  .custom-pl {
+    padding-left: calc(((100vw - 1440px) / 2)) !important;
+  }
+}

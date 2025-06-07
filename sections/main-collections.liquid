@@ -1,0 +1,18 @@
+<div class="py-10 site-container grid content-start gap-5 md:grid-cols-2 lg:grid-cols-3">
+  {% for product in collection.products %}
+    {% render 'product-item'
+      , product: product %}
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Colecciones",
+    "tag": "section",
+    "presets": [
+      {
+        "name": "Colecciones"
+      }
+    ]
+  }
+{% endschema %}

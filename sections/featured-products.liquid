@@ -1,0 +1,136 @@
+{% assign settings = section.settings %}
+{%- assign config = '{"loop": true, "centeredSlides": true,  "slidesPerView": 1,"spaceBetween": 24, "breakpoints": {"768": {"slidesPerView": 2,"spaceBetween": 16}, "1024": {"slidesPerView": 3.3, "spaceBetween": 48, "slidesOffsetBefore": 48, "slidesOffsetAfter": 48}, "1200": {"slidesPerView": 3.7, "spaceBetween": 48, "slidesOffsetBefore": 48, "slidesOffsetAfter": 48} }}' -%}
+
+
+<div class="py-10 lg:py-20 px-4 md:px-0">
+  <site-carousel
+    data-config="{{ config | escape }}"
+    id="{{ section.id }}"
+    data-id="{{ section.id }}">
+    <div class="flex justify-between items-center lg:px-12 w-full max-w-[1440px] mx-auto mb-10 lg:mb-16">
+      <div>
+        <h2 class="h2">{{ settings.title }}</h2>
+        {% if settings.description %}
+          <p class="text-lg mt-2">{{ settings.description }}</p>
+        {% endif %}
+      </div>
+      <div class="hidden lg:flex items-center gap-3">
+        <carousel-prev>
+          <button class="prev button--grass lg:hover:opacity-60 transition-all duration-200">
+            <div class="transform rotate-180">{% render 'icon-arrow-right' %}</div>
+          </button>
+        </carousel-prev>
+        <carousel-next>
+          <button class="next button--grass lg:hover:opacity-60 transition-all duration-200">
+            {% render 'icon-arrow-right' %}
+          </button>
+        </carousel-next>
+      </div>
+    </div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% assign product = block.settings.product %}
+          <div class="swiper-slide w-full overflow-hidden">
+            {% render 'product-item'
+              , product: product %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="flex items-center justify-between gap-6 mt-10 lg:mt-16">
+      <div class="swiper-pagination carousel-pager flex items-center gap-2 !bottom-[unset]"></div>
+    </div>
+  </site-carousel>
+
+  {% unless settings.button_text == blank or settings.button_url == blank %}
+    {% render 'button'
+      , button_text: settings.button_text
+      , button_url: settings.button_url
+      , button_class: 'grass'
+      , custom_class: 'mx-auto' %}
+  {% endunless %}
+</div>
+
+{% schema %}
+  {
+    "name": "Carousel de Productos",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Título"
+      }, {
+        "type": "text",
+        "id": "description",
+        "label": "Descripción"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Texto del botón",
+        "info": "Texto que se mostrará en el botón de la sección, si no se especifica junto al link, no se mostrará el botón"
+      }, {
+        "type": "url",
+        "id": "button_url",
+        "label": "Línk del botón",
+        "info": "URL a la que se dirigirá el botón"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Producto",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Producto"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Carousel de Productos",
+        "settings": {
+          "title": "<p>Explorá algunos de nuestros <em>productos</em></p>",
+          "description": "Un vistazo nunca viene mal.",
+          "button_text": "Todos los productos",
+          "button_url": "shopify://collections"
+        },
+        "blocks": [
+          {
+            "type": "product",
+            "settings": {
+              "product": "cuadro-abstracto"
+            }
+          },
+          {
+            "type": "product",
+            "settings": {
+              "product": "set-de-bano"
+            }
+          },
+          {
+            "type": "product",
+            "settings": {
+              "product": "plato-principal-coral"
+            }
+          },
+          {
+            "type": "product",
+            "settings": {
+              "product": "floreros-blancos"
+            }
+          }, {
+            "type": "product",
+            "settings": {
+              "product": "plato-postre-coral"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

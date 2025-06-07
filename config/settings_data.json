@@ -1,0 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "logo": "shopify://shop_images/logo-colors.png",
+    "favicon": "shopify://shop_images/Elemento_01.png",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "announcement_text": "",
+          "menu": "main-menu",
+          "wp_url": "",
+          "ig_url": "https://www.instagram.com/pasaje69/",
+          "fb_url": "https://www.facebook.com/profile.php?id=100075638299581",
+          "tk_url": "https://www.tiktok.com/@pasaje69home"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "contact_wxHXjn": {
+            "type": "contact",
+            "settings": {
+              "contact_info": "9 de Julio 1200, Yerba Buena, Tucumán",
+              "phone": ""
+            }
+          },
+          "contact_ygzULG": {
+            "type": "contact",
+            "settings": {
+              "contact_info": "Pje. José Padilla 70, San Miguel de Tucumán, Tucumán",
+              "phone": ""
+            }
+          }
+        },
+        "block_order": ["contact_wxHXjn", "contact_ygzULG"],
+        "settings": {
+          "menu": "footer",
+          "wp_url": "",
+          "ig_url": "https://www.instagram.com/pasaje69/",
+          "fb_url": "https://www.facebook.com/profile.php?id=100075638299581",
+          "tk_url": "https://www.tiktok.com/@pasaje69home"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

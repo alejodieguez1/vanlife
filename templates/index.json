@@ -1,0 +1,126 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_ywXn9V": {
+      "type": "hero",
+      "settings": {
+        "video_mobile": "shopify://files/videos/IMG_4019.MP4",
+        "video_desktop": "shopify://files/videos/IMG_4019.MP4",
+        "text_color": "#ffffff",
+        "title": "<p>Donde los <em>sueños </em>se visten de hogar<br/><em>Inspiración </em>para cada rincón de tu <em>vida</em>.</p>",
+        "description": "Productos nobles y atemporales, elegidos con amor para que tu casa se sienta como un hogar.",
+        "cta_text": "Explorá todos los productos",
+        "cta_url": "shopify://collections"
+      }
+    },
+    "fifty_fifty_Ewzp6G": {
+      "type": "fifty-fifty",
+      "name": "Mitad y Mitad",
+      "settings": {
+        "content_position": false,
+        "content_alignment": "middle",
+        "title": "<p>Nuestra colección de <em>baño</em></p>",
+        "description": "Explorá nuestros productos mas destacados para tu baño.",
+        "button_text": "Ver todo",
+        "button_url": "shopify://collections",
+        "image": "shopify://shop_images/bathroom-shelving-mirror.jpg"
+      }
+    },
+    "collections_grid_r9GBmG": {
+      "type": "collections-grid",
+      "blocks": {
+        "collection_BFKwhr": {
+          "type": "collection",
+          "settings": {
+            "collection": "te-y-cafe"
+          }
+        },
+        "collection_LNi6hU": {
+          "type": "collection",
+          "settings": {
+            "collection": "verde-eterno"
+          }
+        },
+        "collection_ekYXiR": {
+          "type": "collection",
+          "settings": {
+            "collection": "mesa"
+          }
+        }
+      },
+      "block_order": [
+        "collection_BFKwhr",
+        "collection_LNi6hU",
+        "collection_ekYXiR"
+      ],
+      "name": "Colecciones Destacadas",
+      "settings": {
+        "title": "<p>Colecciones <em>destacadas</em></p>",
+        "description": "Echa un vistazo a nuestras colecciones destacadas."
+      }
+    },
+    "featured_products_Gtz48j": {
+      "type": "featured-products",
+      "blocks": {
+        "product_FiJxrT": {
+          "type": "product",
+          "settings": {
+            "product": "cuadro-abstracto"
+          }
+        },
+        "product_rqfFff": {
+          "type": "product",
+          "settings": {
+            "product": "set-de-bano"
+          }
+        },
+        "product_gPBjEN": {
+          "type": "product",
+          "settings": {
+            "product": "plato-principal-coral"
+          }
+        },
+        "product_EKHVBa": {
+          "type": "product",
+          "settings": {
+            "product": "floreros-blancos"
+          }
+        },
+        "product_dGftVt": {
+          "type": "product",
+          "settings": {
+            "product": "plato-postre-coral"
+          }
+        }
+      },
+      "block_order": [
+        "product_FiJxrT",
+        "product_rqfFff",
+        "product_gPBjEN",
+        "product_EKHVBa",
+        "product_dGftVt"
+      ],
+      "name": "Carousel de Productos",
+      "settings": {
+        "title": "<p>Explorá algunos de nuestros <em>productos</em></p>",
+        "description": "Un vistazo nunca viene mal.",
+        "button_text": "Todos los productos",
+        "button_url": "shopify://collections"
+      }
+    }
+  },
+  "order": [
+    "hero_ywXn9V",
+    "fifty_fifty_Ewzp6G",
+    "collections_grid_r9GBmG",
+    "featured_products_Gtz48j"
+  ]
+}

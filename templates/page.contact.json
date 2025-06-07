@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "image": "shopify://shop_images/teamwork-group-young-artists_1_2.png",
+        "title": "We're always happy to help you!",
+        "description": "Our US-based team is ready to assist you with any inquiry, no matter how big or small. Don’t hesitate to send us your questions or comments using the form below."
+      }
+    },
+    "faqs_3LDE3H": {
+      "type": "faqs",
+      "blocks": {
+        "faq_fgzrq7": {
+          "type": "faq",
+          "settings": {
+            "question": "I can’t find my subscription or order, where can I go to view them?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam tortor dignissim odio sagittis sit sed. Amet vitae aliquet tincidunt et lectus at dui proin. Vestibulum arcu non habitant ut hendrerit a scelerisque lorem sodales. Viverra volutpat nunc venenatis aliquet sollicitudin. Arcu donec luctus mattis at ultricies. Nec amet ultrices cursus nibh hendrerit eget odio eros. Orci ut sit ac erat tincidunt.</p>"
+          }
+        },
+        "faq_RzjRLq": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I cancel my subscription?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam tortor dignissim odio sagittis sit sed. Amet vitae aliquet tincidunt et lectus at dui proin. Vestibulum arcu non habitant ut hendrerit a scelerisque lorem sodales. Viverra volutpat nunc venenatis aliquet sollicitudin. Arcu donec luctus mattis at ultricies. Nec amet ultrices cursus nibh hendrerit eget odio eros. Orci ut sit ac erat tincidunt.</p>"
+          }
+        },
+        "faq_GxLDGM": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I skip a month in my ongoing subscription?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam tortor dignissim odio sagittis sit sed. Amet vitae aliquet tincidunt et lectus at dui proin. Vestibulum arcu non habitant ut hendrerit a scelerisque lorem sodales. Viverra volutpat nunc venenatis aliquet sollicitudin. Arcu donec luctus mattis at ultricies. Nec amet ultrices cursus nibh hendrerit eget odio eros. Orci ut sit ac erat tincidunt.</p>"
+          }
+        },
+        "faq_WH38XL": {
+          "type": "faq",
+          "settings": {
+            "question": "How can I put my subscription on hold?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam tortor dignissim odio sagittis sit sed. Amet vitae aliquet tincidunt et lectus at dui proin. Vestibulum arcu non habitant ut hendrerit a scelerisque lorem sodales. Viverra volutpat nunc venenatis aliquet sollicitudin. Arcu donec luctus mattis at ultricies. Nec amet ultrices cursus nibh hendrerit eget odio eros. Orci ut sit ac erat tincidunt.</p>"
+          }
+        },
+        "faq_UhzeUb": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I purchase these kits in bulk for a school or corporate account?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam tortor dignissim odio sagittis sit sed. Amet vitae aliquet tincidunt et lectus at dui proin. Vestibulum arcu non habitant ut hendrerit a scelerisque lorem sodales. Viverra volutpat nunc venenatis aliquet sollicitudin. Arcu donec luctus mattis at ultricies. Nec amet ultrices cursus nibh hendrerit eget odio eros. Orci ut sit ac erat tincidunt.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_fgzrq7",
+        "faq_RzjRLq",
+        "faq_GxLDGM",
+        "faq_WH38XL",
+        "faq_UhzeUb"
+      ],
+      "settings": {
+        "pretitle": "Your Questions Answered",
+        "title": "Frequently Asked Questions"
+      }
+    }
+  },
+  "order": ["form", "faqs_3LDE3H"]
+}

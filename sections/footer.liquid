@@ -1,0 +1,122 @@
+<div class="py-10 lg:py-[3.75rem] relative bg-white">
+  <div class="site-container">
+    <div class="grid content-start gap-10 border-b border-chocolate pb-9 lg:grid-cols-[auto_auto] lg:gap-12 xl:gap-64 px-5">
+      <div class="w-[11rem] justify-self-start">
+        {% render 'logo' %}
+      </div>
+      <div class="grid grid-cols-2 gap-8 sm:grid-flow-col lg:gap-0">
+        {% for item in section.settings.menu.links %}
+          <div class="grid content-start gap-3">
+            <p class="uppercase text-chocolate">
+              {{ item.title }}</p>
+            {% for link in item.links %}
+              <a href="{{ link.url }}" class="group relative inline-block text-sm transition-all duration-200 w-fit">
+                {{ link.title }}
+                <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-current transition-all duration-500 group-hover:w-full"></span>
+              </a>
+            {% endfor %}
+            {% if forloop.index == 2 %}
+              <div class="grid content-start gap-3">
+                {% unless section.settings.wp_url == blank %}
+                  <a href="{{ section.settings.wp_url }}" class="group relative inline-block text-sm transition-all duration-200 w-fit">
+                    Whatsapp
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-current transition-all duration-500 group-hover:w-full"></span>
+                  </a>
+                {% endunless %}
+                {% unless section.settings.ig_url == blank %}
+                  <a href="{{ section.settings.ig_url }}" class="group relative inline-block text-sm transition-all duration-200 w-fit">
+                    Instagram
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-current transition-all duration-500 group-hover:w-full"></span>
+                  </a>
+                {% endunless %}
+                {% unless section.settings.fb_url == blank %}
+                  <a href="{{ section.settings.fb_url }}" class="group relative inline-block text-sm transition-all duration-200 w-fit">
+                    Facebook
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-current transition-all duration-500 group-hover:w-full"></span>
+                  </a>
+                {% endunless %}
+                {% unless section.settings.tk_url == blank %}
+                  <a href="{{ section.settings.tk_url }}" class="group relative inline-block text-sm transition-all duration-200 w-fit">
+                    Tiktok
+                    <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-current transition-all duration-500 group-hover:w-full"></span>
+                  </a>
+                {% endunless %}
+              </div>
+            {% endif %}
+            {% if forloop.last %}
+              {% for block in section.blocks %}
+                <div class="grid content-start gap-3">
+                  <p class="text-sm">{{ block.settings.contact_info }}</p>
+                  {% unless block.settings.phone == blank %}
+                    <a href="{{ block.settings.phone }}" class="group relative inline-block text-sm transition-all duration-200 w-fit">
+                      <span>{{ block.settings.phone }}</span>
+                      <span class="absolute bottom-0 left-0 h-[1px] w-0 bg-current transition-all duration-500 group-hover:w-full"></span>
+                    </a>
+                  {% endunless %}
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+    <div class="grid content-start pt-5 px-5">
+      <p class="text-xs">© 2025 Pasaje 69 Home. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Pie de pagina",
+    "tag": "footer",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Footer Menu"
+      }, {
+        "type": "url",
+        "id": "ig_url",
+        "label": "Link Instagram"
+      }, {
+        "type": "url",
+        "id": "fb_url",
+        "label": "Link Facebook"
+      }, {
+        "type": "url",
+        "id": "tk_url",
+        "label": "Link Tiktok"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "contact",
+        "name": "Información de contacto",
+        "settings": [
+          {
+            "type": "text",
+            "id": "contact_info",
+            "label": "Sucursal"
+          }, {
+            "type": "text",
+            "id": "phone",
+            "label": "Teléfono de contacto"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Pie de pagina",
+        "settings": {
+          "menu": "footer",
+          "ig_url": "https://www.instagram.com/pasaje69/",
+          "fb_url": "https://www.facebook.com/profile.php?id=100075638299581",
+          "tk_url": "https://www.tiktok.com/@pasaje69home"
+        }
+      }
+    ]
+  }
+{% endschema %}

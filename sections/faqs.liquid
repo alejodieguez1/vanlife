@@ -1,0 +1,104 @@
+<div class="site-container py-10">
+  <div class="grid content-start gap-12 lg:max-w-[800px] mx-auto">
+    <div class="grid content-start text-center">
+      <h2 class="h4 lg:text-[2.875rem] text-teal">{{ section.settings.title }}</h2>
+      <p class="text-lg">{{ section.settings.pretitle }}</p>
+    </div>
+    <div class="grid gap-4">
+      {% for block in section.blocks %}
+        <accordion-item class="border border-teal rounded-xl p-3 lg:p-6">
+          <details>
+            <summary class="flex justify-between items-center w-full">
+              <h3 class="font-heading">{{ block.settings.question }}</h3>
+              <div class="flex">{% render 'icon-down' %}</div>
+            </summary>
+            <div class="content transition-all duration-300">
+              <div class="pt-6"></div>
+              {{ block.settings.answer }}
+            </div>
+          </details>
+        </accordion-item>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "FAQs",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "pretitle",
+        "label": "Description"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faq",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          }, {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQs",
+        "settings": {
+          "title": "Frequently Asked Questions",
+          "pretitle": "Your Questions Answered"
+        },
+        "blocks": [
+          {
+            "type": "faq",
+            "settings": {
+              "question": "I can’t find my subscription or order, where can I go to view them?",
+              "answer": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam tortor dignissim odio sagittis sit sed. Amet vitae aliquet tincidunt et lectus at dui proin. Vestibulum arcu non habitant ut hendrerit a scelerisque lorem sodales. Viverra volutpat nunc venenatis aliquet sollicitudin. Arcu donec luctus mattis at ultricies. Nec amet ultrices cursus nibh hendrerit eget odio eros. Orci ut sit ac erat tincidunt.</p>"
+            }
+          },
+          {
+            "type": "faq",
+            "settings": {
+              "question": "How do I cancel my subscription?",
+              "answer": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam tortor dignissim odio sagittis sit sed. Amet vitae aliquet tincidunt et lectus at dui proin. Vestibulum arcu non habitant ut hendrerit a scelerisque lorem sodales. Viverra volutpat nunc venenatis aliquet sollicitudin. Arcu donec luctus mattis at ultricies. Nec amet ultrices cursus nibh hendrerit eget odio eros. Orci ut sit ac erat tincidunt.</p>"
+            }
+          },
+          {
+            "type": "faq",
+            "settings": {
+              "question": "How do I skip a month in my ongoing subscription?",
+              "answer": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam tortor dignissim odio sagittis sit sed. Amet vitae aliquet tincidunt et lectus at dui proin. Vestibulum arcu non habitant ut hendrerit a scelerisque lorem sodales. Viverra volutpat nunc venenatis aliquet sollicitudin. Arcu donec luctus mattis at ultricies. Nec amet ultrices cursus nibh hendrerit eget odio eros. Orci ut sit ac erat tincidunt.</p>"
+            }
+          },
+          {
+            "type": "faq",
+            "settings": {
+              "question": "How can I put my subscription on hold?",
+              "answer": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam tortor dignissim odio sagittis sit sed. Amet vitae aliquet tincidunt et lectus at dui proin. Vestibulum arcu non habitant ut hendrerit a scelerisque lorem sodales. Viverra volutpat nunc venenatis aliquet sollicitudin. Arcu donec luctus mattis at ultricies. Nec amet ultrices cursus nibh hendrerit eget odio eros. Orci ut sit ac erat tincidunt.</p>"
+            }
+          }, {
+            "type": "faq",
+            "settings": {
+              "question": "Can I purchase these kits in bulk for a school or corporate account?",
+              "answer": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam tortor dignissim odio sagittis sit sed. Amet vitae aliquet tincidunt et lectus at dui proin. Vestibulum arcu non habitant ut hendrerit a scelerisque lorem sodales. Viverra volutpat nunc venenatis aliquet sollicitudin. Arcu donec luctus mattis at ultricies. Nec amet ultrices cursus nibh hendrerit eget odio eros. Orci ut sit ac erat tincidunt.</p>"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

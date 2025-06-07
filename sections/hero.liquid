@@ -1,0 +1,87 @@
+{% assign settings = section.settings %}
+
+<div class="grid gap-8 relative h-screen" style="color: {{ settings.text_color }};">
+  <div class="grid site-container relative z-20 py-20 text-center">
+    <div class="grid content-start gap-10 self-center">
+      <h3 class="hero-h1">{{ settings.title }}</h3>
+      {% unless settings.description == blank %}
+        <p class="text-sm lg:text-lg max-w-[28rem] mx-auto">{{ settings.description }}</p>
+      {% endunless %}
+    </div>
+    {% unless settings.cta_text == blank or settings.cta_url == blank %}
+      {% render 'button'
+        , button_text: settings.cta_text
+        , button_url: settings.cta_url
+        , button_class: 'cloud'
+        , custom_class: 'self-end sm:max-w-[700px] sm:justify-self-center' %}
+    {% endunless %}
+  </div>
+  {% render 'media-component'
+    , video_mobile: section.settings.video_mobile
+    , video_desktop: section.settings.video_desktop
+    , desktop_image: section.settings.bg_desktop
+    , mobile_image: section.settings.bg_mobile %}
+</div>
+
+{% schema %}
+  {
+    "name": "Hero",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_mobile",
+        "label": "Background Image Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_desktop",
+        "label": "Background Image Desktop"
+      },
+      {
+        "type": "video",
+        "id": "video_mobile",
+        "label": "Video Telefono"
+      },
+      {
+        "type": "video",
+        "id": "video_desktop",
+        "label": "Video Computadora"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Color de Texto"
+      }, {
+        "type": "richtext",
+        "id": "title",
+        "label": "Titulo"
+      }, {
+        "type": "text",
+        "id": "description",
+        "label": "Descripcion"
+      }, {
+        "type": "text",
+        "id": "cta_text",
+        "label": "Texto de Boton"
+      }, {
+        "type": "url",
+        "id": "cta_url",
+        "label": "Link de Boton"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero",
+        "settings": {
+          "video_mobile": "shopify://files/videos/IMG_4019.MP4",
+          "video_desktop": "shopify://files/videos/IMG_4019.MP4",
+          "text_color": "#ffffff",
+          "title": "<p><em><strong>Espacios </strong></em>que inspiran<br/>Detalles con <em><strong>respeto</strong></em></p>",
+          "description": "Productos nobles y atemporales, elegidos con amor para que tu casa se sienta como un hogar.",
+          "cta_text": "Explorá todos los productos",
+          "cta_url": "shopify://collections"
+        }
+      }
+    ]
+  }
+{% endschema %}

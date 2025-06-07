@@ -1,0 +1,100 @@
+<div class="py-10 lg:py-20 bg-white">
+  <div class="site-container grid content-start gap-10">
+    <div class="grid content-start gap-3">
+      <h2 class="h2">{{ section.settings.title }}</h2>
+      {% unless section.settings.description == blank %}
+        <p class="max-w-xl text-sm lg:text-lg">{{ section.settings.description }}</p>
+      {% endunless %}
+    </div>
+    <div class="grid content-start gap-5 md:grid-cols-3">
+      {% for block in section.blocks %}
+        {% assign collection = collections[block.settings.collection] %}
+        {% assign image = block.settings.image %}
+        {% if image == blank %}
+          {% assign image = collection.image %}
+        {% endif %}
+        <a href="{{ collection.url }}" class="relative grid content-center pt-[100%] overflow-hidden rounded-xl group">
+          <div class="grid content-center gap-5 absolute top-0 left-0 right-0 bottom-0 z-20">
+            <h2 class="flex items-center justify-center text-white h3 font-heading italic uppercase">{{ collection.title }}</h2>
+            <div class="w-10 h-10 relative group mx-auto transform -rotate-45">
+              <div class="w-10 h-10 bg-white text-chocolate flex items-center justify-center rounded-full overflow-hidden group-hover:scale-125 transition-all duration-500">
+                <div class="transform -translate-x-[50px] group-hover:translate-x-[12px] transition-all duration-500">{% render 'icon-arrow-right' %}</div>
+                <div class="transform -translate-x-[12px] group-hover:translate-x-[50px] transition-all duration-500">{% render 'icon-arrow-right' %}</div>
+              </div>
+            </div>
+          </div>
+          {% render 'media-component'
+            , desktop_image: image
+            , mobile_image: image
+            , custom_class: 'group-hover:scale-110 transform transition-all duration-500' %}
+          <div class="absolute top-0 left-0 right-0 w-full h-full z-10 bg-black bg-opacity-20"></div>
+
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Colecciones Destacadas",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Título"
+      }, {
+        "type": "text",
+        "id": "description",
+        "label": "Descripción"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Colección",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Colección",
+            "info": "Selecciona una colección para mostrar en la sección."
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Imagen A Mostrar",
+            "info": "Si no seleccionas una imagen, se mostrará la imagen de la colección."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Colecciones Destacadas",
+        "settings": {
+          "title": "<p>Colecciones <em>Destacadas</em></p>",
+          "description": "Echa un vistazo a nuestras colecciones destacadas."
+        },
+        "blocks": [
+          {
+            "type": "collection",
+            "settings": {
+              "collection": "te-y-cafe"
+            }
+          }, {
+            "type": "collection",
+            "settings": {
+              "collection": "verde-eterno"
+            }
+          }, {
+            "type": "collection",
+            "settings": {
+              "collection": "mesa"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
