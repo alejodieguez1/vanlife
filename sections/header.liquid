@@ -14,9 +14,6 @@
             <span class="bg-white w-10 h-[2px] flex transform transition duration-500 origin-center group-[.active]:-rotate-45 group-[.active]:-translate-y-[0.25rem]"></span>
           </button>
         </div>
-        <div class="w-16 lg:w-24">
-          <a href="/" class="block">{% render 'logo' %}</a>
-        </div>
         <div class="items-center gap-6 hidden lg:flex">
           {% for link in settings.menu.links %}
             <a href="{{ link.url }}" class="group relative inline-block text-sm font-body-medium uppercase transition-all duration-500">
@@ -25,13 +22,10 @@
             </a>
           {% endfor %}
         </div>
-        <div class="flex gap-9 lg:bg-white rounded-full desktop-menu lg:text-gray-900 lg:px-6 lg:transition-all lg:duration-500">
-          <div class="flex items-center gap-6">
-            <a class="lg:hover:opacity-50 lg:transition-all lg:duration-500 hidden lg:block" href="/account">{% render 'icon-account' %}</a>
-            <div class="w-[1px] h-[23.5px] bg-gray-300 hidden lg:block"></div>
-            <button class="lg:hover:opacity-50 lg:transition-all lg:duration-500">{% render 'icon-cart' %}</button>
-          </div>
+        <div class="w-16 lg:w-24">
+          <a href="/" class="block">{% render 'logo' %}</a>
         </div>
+        <button class="lg:hover:opacity-50 lg:transition-all lg:duration-500">{% render 'icon-cart' %}</button>
       </div>
     </div>
   </div>
