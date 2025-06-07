@@ -2,7 +2,13 @@
 
 
 <div class="py-10 lg:py-20 px-4 md:px-0 bg-[#f4f3f1]">
-  <div class="site-container">
+  <div class="site-container grid content-start gap-10">
+    <div class="grid content-start gap-2">
+      <h2 class="h2">{{ settings.title }}</h2>
+      {% if settings.description %}
+        <p class="text-lg mt-2">{{ settings.description }}</p>
+      {% endif %}
+    </div>
     <div class="grid content-start gap-5 md:grid-cols-2 lg:grid-cols-4">
       {% for block in section.blocks %}
         {% if block.type == "product" %}
