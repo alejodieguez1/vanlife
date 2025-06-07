@@ -25,9 +25,52 @@
         "start_hours": 0,
         "start_minute": 0
       }
+    },
+    "featured_products_LEUHp4": {
+      "type": "featured-products",
+      "blocks": {
+        "product_K9TWtE": {
+          "type": "product",
+          "settings": {
+            "product": "bronze-easy-entry"
+          }
+        },
+        "product_mRty6z": {
+          "type": "product",
+          "settings": {
+            "product": "silver-easy-entry"
+          }
+        },
+        "product_piD4PK": {
+          "type": "product",
+          "settings": {
+            "product": "gold-easy-entry"
+          }
+        },
+        "product_PJXzzK": {
+          "type": "product",
+          "settings": {
+            "product": "platinum-easy-entry"
+          }
+        }
+      },
+      "block_order": [
+        "product_K9TWtE",
+        "product_mRty6z",
+        "product_piD4PK",
+        "product_PJXzzK"
+      ],
+      "name": "Easy Entries",
+      "settings": {
+        "title": "<p>Want some easy entries?</p>",
+        "description": "Buy them in the easiest wat possible and get more chances to win!",
+        "button_text": "Shop All",
+        "button_url": "shopify://collections"
+      }
     }
   },
   "order": [
-    "hero_ywXn9V"
+    "hero_ywXn9V",
+    "featured_products_LEUHp4"
   ]
 }
