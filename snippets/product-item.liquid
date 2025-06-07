@@ -1,15 +1,15 @@
-<div class="grid rounded-xl overflow-hidden group relative">
+<div class="grid rounded-xl overflow-hidden relative">
   <a href="{{ product.url }}" class="relative aspect-[0.8]">
     {% render 'media-component'
       , desktop_image: product.featured_image
       , mobile_image: product.featured_image %}
   </a>
-  <div class="p-4 grid gap-5 bg-white rounded-t-xl overflow-hidden lg:translate-y-[47%] lg:group-hover:translate-y-0 transition-all duration-500 lg:absolute bottom-0 left-0 right-0 z-10">
+  <div class="p-4 grid gap-5 bg-white rounded-t-xl overflow-hidden z-10 border border-dark-gray">
     <div class="grid">
       <a href="{{ product.url }}" class="h5 font-heading italic">{{ product.title }}</a>
       <div class="flex">
         <div class="flex gap-2">
-          <span>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+          <span>{{ product.price | money_without_trailing_zeros }}</span>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
             type="hidden"
             name="selling_plan"
             value="{{ product.selling_plan_groups[0].selling_plans[0].id }}">
-          {% assign button_text = "Añadir al carrito" %}
+          {% assign button_text = "Add to cart" %}
           {% render 'button'
             , button_text: button_text
             , button_class: "grass"

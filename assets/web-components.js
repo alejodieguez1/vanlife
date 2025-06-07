@@ -690,3 +690,44 @@ class ProductQuantitySelector extends HTMLElement {
 }
 
 customElements.define("product-quantity-selector", ProductQuantitySelector);
+
+class CountdownTimer extends HTMLElement {
+  connectedCallback() {
+    const endDateStr = this.getAttribute("data-end-date");
+    console.log(endDateStr);
+
+    if (!endDateStr) return;
+    const endDate = new Date(endDateStr);
+
+    const daysEl = this.querySelector('[data-role="days"]');
+    const hoursEl = this.querySelector('[data-role="hours"]');
+    const minutesEl = this.querySelector('[data-role="minutes"]');
+    const secondsEl = this.querySelector('[data-role="seconds"]');
+
+    const update = () => {
+      const now = new Date();
+      const diff = endDate - now;
+
+      if (diff <= 0) {
+        this.innerHTML = `<div class="text-xl font-bold text-center">GIVEAWAY ENDED</div>`;
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      daysEl.textContent = String(days).padStart(2, "0");
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+    };
+
+    update();
+    const interval = setInterval(update, 1000);
+  }
+}
+
+customElements.define("countdown-timer", CountdownTimer);

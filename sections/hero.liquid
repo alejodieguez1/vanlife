@@ -1,26 +1,55 @@
 {% assign settings = section.settings %}
 
 <div class="grid gap-8 relative h-screen" style="color: {{ settings.text_color }};">
-  <div class="grid site-container relative z-20 py-20 text-center">
-    <div class="grid content-start gap-10 self-center">
-      <h3 class="hero-h1">{{ settings.title }}</h3>
+  <div class="grid site-container relative z-20">
+    <div class="grid content-center gap-5">
+      <h2 class="h2 max-w-[650px]">{{ settings.title }}</h2>
       {% unless settings.description == blank %}
-        <p class="text-sm lg:text-lg max-w-[28rem] mx-auto">{{ settings.description }}</p>
+        <p class="text-sm lg:text-lg max-w-[28rem]">{{ settings.description }}</p>
       {% endunless %}
+
+      {% unless settings.cta_text == blank or settings.cta_url == blank %}
+        {% render 'button'
+          , button_text: settings.cta_text
+          , button_url: settings.cta_url
+          , button_class: 'grass'
+          , custom_class: 'sm:max-w-[700px]' %}
+      {% endunless %}
+
+      <countdown-timer data-end-date="{{ '2025-07-01T00:00:00Z' }}">
+        <div class="grid gap-2">
+          <div class="text-2xl font-body-bold">
+            Giveaway ends in:
+          </div>
+          <div class="timer flex gap-5 text-4xl">
+            <div class="text-center bg-black bg-opacity-25 rounded-lg p-2 w-fit">
+              <div data-role="days">--</div>
+              <div class="text-xs mt-1">Days</div>
+            </div>
+            <div class="text-center bg-black bg-opacity-25 rounded-lg p-2 w-fit">
+              <div data-role="hours">--</div>
+              <div class="text-xs mt-1">Hours</div>
+            </div>
+            <div class="text-center bg-black bg-opacity-25 rounded-lg p-2 w-fit">
+              <div data-role="minutes">--</div>
+              <div class="text-xs mt-1">Minutes</div>
+            </div>
+            <div class="text-center bg-black bg-opacity-25 rounded-lg p-2 w-fit">
+              <div data-role="seconds">--</div>
+              <div class="text-xs mt-1">Seconds</div>
+            </div>
+          </div>
+        </div>
+      </countdown-timer>
+
     </div>
-    {% unless settings.cta_text == blank or settings.cta_url == blank %}
-      {% render 'button'
-        , button_text: settings.cta_text
-        , button_url: settings.cta_url
-        , button_class: 'cloud'
-        , custom_class: 'self-end sm:max-w-[700px] sm:justify-self-center' %}
-    {% endunless %}
   </div>
   {% render 'media-component'
     , video_mobile: section.settings.video_mobile
     , video_desktop: section.settings.video_desktop
     , desktop_image: section.settings.bg_desktop
     , mobile_image: section.settings.bg_mobile %}
+  <div class="bg-black bg-opacity-25 absolute top-0 left-0 right-0 w-full h-full"></div>
 </div>
 
 {% schema %}
@@ -67,6 +96,49 @@
         "type": "url",
         "id": "cta_url",
         "label": "Link de Boton"
+      }, {
+        "type": "header",
+        "content": "End date"
+      }, {
+        "type": "range",
+        "id": "start_year",
+        "label": "Year",
+        "min": 2024,
+        "max": 2035,
+        "step": 1,
+        "default": 2025
+      }, {
+        "type": "range",
+        "id": "start_month",
+        "label": "Month",
+        "min": 1,
+        "max": 12,
+        "step": 1,
+        "default": 7
+      }, {
+        "type": "range",
+        "id": "start_day",
+        "label": "Day",
+        "min": 1,
+        "max": 31,
+        "step": 1,
+        "default": 1
+      }, {
+        "type": "range",
+        "id": "start_hours",
+        "label": "Hours",
+        "min": 0,
+        "max": 23,
+        "step": 1,
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "start_minute",
+        "label": "Minute",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "default": 0
       }
     ],
     "presets": [

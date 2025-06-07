@@ -38,11 +38,11 @@ input[type="search"]::-webkit-search-results-decoration {
 /* Headings */
 
 .h1 {
-  @apply text-5xl lg:text-6xl leading-[100%];
+  @apply text-5xl lg:text-6xl leading-[100%] font-body-bold;
 }
 
 .h2 {
-  @apply text-4xl lg:text-5xl leading-[100%];
+  @apply text-4xl lg:text-5xl leading-[100%] font-body-bold;
 }
 
 .h3 {
@@ -50,11 +50,11 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .h4 {
-  @apply text-2xl lg:text-3xl leading-[100%];
+  @apply text-2xl lg:text-3xl leading-[100%] font-body-bold;
 }
 
 .h5 {
-  @apply text-xl lg:text-2xl leading-[100%];
+  @apply text-xl lg:text-2xl leading-[100%] font-body-bold;
 }
 .hero-h1 {
   @apply text-4xl lg:text-6xl !leading-[1.1] font-body-bold;
@@ -117,7 +117,7 @@ site-header .site-header.scrolled .desktop-menu {
 }
 
 site-header .site-header.scrolled {
-  @apply text-gray-900 bg-white transition-all duration-500;
+  @apply text-gray-900 bg-white transition-all duration-500 !py-8;
 }
 
 site-header .site-header.active {

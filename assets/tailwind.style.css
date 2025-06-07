@@ -578,10 +578,6 @@ html {
   inset: 0px;
 }
 
-.\!bottom-\[unset\] {
-  bottom: unset !important;
-}
-
 .-top-24 {
   top: -6rem;
 }
@@ -598,16 +594,16 @@ html {
   left: 0px;
 }
 
+.left-1\/2 {
+  left: 50%;
+}
+
 .left-\[12\%\] {
   left: 12%;
 }
 
 .right-0 {
   right: 0px;
-}
-
-.right-3 {
-  right: 0.75rem;
 }
 
 .right-\[21\%\] {
@@ -646,6 +642,10 @@ html {
   z-index: 49;
 }
 
+.z-\[5\] {
+  z-index: 5;
+}
+
 .order-1 {
   order: 1;
 }
@@ -659,16 +659,8 @@ html {
   margin-right: auto;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .mt-20 {
@@ -715,10 +707,6 @@ html {
   height: 1px;
 }
 
-.h-\[23\.5px\] {
-  height: 23.5px;
-}
-
 .h-\[2px\] {
   height: 2px;
 }
@@ -751,12 +739,12 @@ html {
   width: 4rem;
 }
 
-.w-\[11rem\] {
-  width: 11rem;
+.w-48 {
+  width: 12rem;
 }
 
-.w-\[1px\] {
-  width: 1px;
+.w-\[11rem\] {
+  width: 11rem;
 }
 
 .w-fit {
@@ -772,10 +760,6 @@ html {
   max-width: 15rem;
 }
 
-.max-w-\[1440px\] {
-  max-width: 1440px;
-}
-
 .max-w-\[200px\] {
   max-width: 200px;
 }
@@ -784,12 +768,21 @@ html {
   max-width: 28rem;
 }
 
+.max-w-\[650px\] {
+  max-width: 650px;
+}
+
 .max-w-xl {
   max-width: 36rem;
 }
 
 .origin-center {
   transform-origin: center;
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .-translate-x-\[100\%\] {
@@ -807,13 +800,13 @@ html {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.-rotate-45 {
-  --tw-rotate: -45deg;
+.translate-y-\[100\%\] {
+  --tw-translate-y: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.rotate-180 {
-  --tw-rotate: 180deg;
+.-rotate-45 {
+  --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -897,20 +890,8 @@ html {
   gap: 2rem;
 }
 
-.gap-9 {
-  gap: 2.25rem;
-}
-
 .gap-\[0\.875rem\] {
   gap: 0.875rem;
-}
-
-.self-end {
-  align-self: flex-end;
-}
-
-.self-center {
-  align-self: center;
 }
 
 .justify-self-start {
@@ -935,6 +916,10 @@ html {
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .rounded-md {
@@ -973,6 +958,16 @@ html {
   border-color: rgb(85 85 85 / var(--tw-border-opacity, 1));
 }
 
+.bg-\[\#989B8B\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(152 155 139 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#f4f3f1\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 243 241 / var(--tw-bg-opacity, 1));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
@@ -983,11 +978,6 @@ html {
   background-color: rgb(188 171 153 / var(--tw-bg-opacity, 1));
 }
 
-.bg-cloud {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 244 240 / var(--tw-bg-opacity, 1));
-}
-
 .bg-current {
   background-color: currentColor;
 }
@@ -995,11 +985,6 @@ html {
 .bg-grass {
   --tw-bg-opacity: 1;
   background-color: rgb(187 190 169 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gray-bg {
@@ -1024,6 +1009,10 @@ html {
   --tw-bg-opacity: 0.2;
 }
 
+.bg-opacity-25 {
+  --tw-bg-opacity: 0.25;
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -1037,6 +1026,14 @@ html {
 .object-center {
   -o-object-position: center;
      object-position: center;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .p-3 {
@@ -1081,19 +1078,14 @@ html {
   padding-bottom: 2.5rem;
 }
 
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
 }
 
 .py-\[0\.625rem\] {
@@ -1141,8 +1133,22 @@ html {
   font-family: Mori Regular;
 }
 
+.font-body-bold {
+  font-family: Mori Semibold;
+}
+
 .font-heading {
   font-family: Editorial;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-base {
@@ -1205,10 +1211,6 @@ html {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.underline {
-  text-decoration-line: underline;
 }
 
 .shadow {
@@ -1283,6 +1285,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /* Headings */
 
 .h1 {
+  font-family: Mori Semibold;
   font-size: 3rem;
   line-height: 1;
   line-height: 100%;
@@ -1296,6 +1299,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .h2 {
+  font-family: Mori Semibold;
   font-size: 2.25rem;
   line-height: 2.5rem;
   line-height: 100%;
@@ -1321,6 +1325,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .h4 {
+  font-family: Mori Semibold;
   font-size: 1.5rem;
   line-height: 2rem;
   line-height: 100%;
@@ -1334,6 +1339,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .h5 {
+  font-family: Mori Semibold;
   font-size: 1.25rem;
   line-height: 1.75rem;
   line-height: 100%;
@@ -1641,6 +1647,8 @@ site-header .menu.active {
 site-header .site-header.scrolled {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity, 1));
   transition-property: all;
@@ -1915,26 +1923,12 @@ carousel-pager button.active,
     height: 50%;
   }
 
-  .sm\:w-fit {
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-
   .sm\:max-w-\[700px\] {
     max-width: 700px;
   }
 
   .sm\:grid-flow-col {
     grid-auto-flow: column;
-  }
-
-  .sm\:justify-self-center {
-    justify-self: center;
-  }
-
-  .sm\:\!px-20 {
-    padding-left: 5rem !important;
-    padding-right: 5rem !important;
   }
 
   .sm\:\!px-5 {
@@ -1971,24 +1965,12 @@ carousel-pager button.active,
 }
 
 @media (min-width: 1024px) {
-  .lg\:absolute {
-    position: absolute;
-  }
-
   .lg\:order-1 {
     order: 1;
   }
 
   .lg\:order-2 {
     order: 2;
-  }
-
-  .lg\:mb-16 {
-    margin-bottom: 4rem;
-  }
-
-  .lg\:mt-16 {
-    margin-top: 4rem;
   }
 
   .lg\:block {
@@ -2024,17 +2006,16 @@ carousel-pager button.active,
     max-width: 800px;
   }
 
-  .lg\:translate-y-\[47\%\] {
-    --tw-translate-y: 47%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-\[0\.75fr_1fr\] {
@@ -2065,11 +2046,6 @@ carousel-pager button.active,
     justify-self: start;
   }
 
-  .lg\:bg-white {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-  }
-
   .lg\:object-cover {
     -o-object-fit: cover;
        object-fit: cover;
@@ -2088,24 +2064,19 @@ carousel-pager button.active,
     padding-right: 1.25rem !important;
   }
 
-  .lg\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
   .lg\:px-2\.5 {
     padding-left: 0.625rem;
     padding-right: 0.625rem;
   }
 
-  .lg\:px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .lg\:py-20 {
@@ -2116,11 +2087,6 @@ carousel-pager button.active,
   .lg\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
-  }
-
-  .lg\:py-\[18px\] {
-    padding-top: 18px;
-    padding-bottom: 18px;
   }
 
   .lg\:py-\[3\.75rem\] {
@@ -2158,11 +2124,6 @@ carousel-pager button.active,
     line-height: 1;
   }
 
-  .lg\:text-gray-900 {
-    --tw-text-opacity: 1;
-    color: rgb(17 24 39 / var(--tw-text-opacity, 1));
-  }
-
   .lg\:transition-all {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2175,10 +2136,6 @@ carousel-pager button.active,
 
   .lg\:hover\:opacity-50:hover {
     opacity: 0.5;
-  }
-
-  .lg\:hover\:opacity-60:hover {
-    opacity: 0.6;
   }
 
   .group:hover .lg\:group-hover\:translate-y-0 {
