@@ -22,37 +22,39 @@
 %}
 
 
-<div class="grid content-start lg:grid-cols-2 gap-16 site-container py-10 lg:py-20" style="background: {{ background_color }}; color: {{ text_color }};">
-  <div class="{% if settings.content_position == true %} order-1 lg:order-1 {% else %} order-2 lg:order-2 {% endif %} grid gap-5 {% if settings.content_alignment == "top" %} content-start {% elsif settings.content_alignment == "middle" %} content-center {% else %} content-end {% endif %}">
-    <h2 class="h2">{{ settings.title }}</h2>
-    {% unless settings.description == blank %}
-      <p class="text-sm lg:text-lg">{{ settings.description }}</p>
-    {% endunless %}
-    {% unless settings.button_text == blank or settings.button_url == blank %}
-      {% render 'button'
-        , button_class: button_color
-        , button_text: settings.button_text
-        , button_url: settings.button_url %}
-    {% endunless %}
+<div class="py-10 lg:py-20" style="background: {{ background_color }}; color: {{ text_color }};">
+  <div class="grid content-start lg:grid-cols-2 gap-16 site-container">
+    <div class="{% if settings.content_position == true %} order-1 lg:order-1 {% else %} order-2 lg:order-2 {% endif %} grid gap-5 {% if settings.content_alignment == "top" %} content-start {% elsif settings.content_alignment == "middle" %} content-center {% else %} content-end {% endif %}">
+      <h2 class="h2">{{ settings.title }}</h2>
+      {% unless settings.description == blank %}
+        <p class="text-sm lg:text-lg">{{ settings.description }}</p>
+      {% endunless %}
+      {% unless settings.button_text == blank or settings.button_url == blank %}
+        {% render 'button'
+          , button_class: button_color
+          , button_text: settings.button_text
+          , button_url: settings.button_url %}
+      {% endunless %}
+    </div>
+    {% if settings.image != blank %}
+      <div class="relative pt-[100%] md:pt-[70%] lg:pt-[100%] {% if settings.content_position == true %} order-2 lg:order-2 {% else %} order-1 lg:order-1 {% endif %}">
+        {% render 'media-component'
+          , desktop_image: settings.image
+          , mobile_image: settings.image %}
+      </div>
+    {% elsif settings.video != blank %}
+      <div class="relative pt-[100%] md:pt-[70%] lg:pt-[100%] {% if settings.content_position == true %} order-2 lg:order-2 {% else %} order-1 lg:order-1 {% endif %}">
+        {% render 'media-component'
+          , video_desktop: settings.video
+          , video_mobile: settings.video %}
+      </div>
+    {% endif %}
   </div>
-  {% if settings.image != blank %}
-    <div class="relative pt-[100%] md:pt-[70%] lg:pt-[100%] {% if settings.content_position == true %} order-2 lg:order-2 {% else %} order-1 lg:order-1 {% endif %}">
-      {% render 'media-component'
-        , desktop_image: settings.image
-        , mobile_image: settings.image %}
-    </div>
-  {% elsif settings.video != blank %}
-    <div class="relative pt-[100%] md:pt-[70%] lg:pt-[100%] {% if settings.content_position == true %} order-2 lg:order-2 {% else %} order-1 lg:order-1 {% endif %}">
-      {% render 'media-component'
-        , video_desktop: settings.video
-        , video_mobile: settings.video %}
-    </div>
-  {% endif %}
 </div>
 
 {% schema %}
   {
-    "name": "Mitad y Mitad",
+    "name": "Fifty Fifty",
     "tag": "section",
     "settings": [
       {
@@ -131,16 +133,7 @@
     ],
     "presets": [
       {
-        "name": "Mitad y Mitad",
-        "settings": {
-          "content_position": false,
-          "content_alignment": "middle",
-          "title": "<p><em>Nuestra </em>colección de <em>cocina</em></p>",
-          "description": "Explorá nuestros productos mas destacados para tu cocina",
-          "button_text": "Ver todo",
-          "button_url": "shopify://collections",
-          "image": "shopify://shop_images/Mesa_de_trabajo_1_a02d7ec3-c2fd-462e-8432-d46c86ccb95b.webp"
-        }
+        "name": "Fifty Fifty"
       }
     ]
   }
