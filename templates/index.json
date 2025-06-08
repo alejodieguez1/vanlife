@@ -14,7 +14,7 @@
       "settings": {
         "bg_mobile": "shopify://shop_images/Main_one.webp",
         "bg_desktop": "shopify://shop_images/Main_one.webp",
-        "text_color": "#fff",
+        "text_color": "#ffffff",
         "title": "<p>Buy and win this Volkswagen Camper Van + 20k Cash + DJI Mini 4 Pro Drone</p>",
         "description": "Dreaming of the ultimate road trip? Now's your change to own an iconic vintage adventure van!",
         "cta_text": "Get Entries",
@@ -67,7 +67,21 @@
         "button_text": "Shop All",
         "button_url": "shopify://collections"
       }
+    },
+    "fifty_fifty_hi7bnt": {
+      "type": "fifty-fifty",
+      "name": "Fifty Fifty",
+      "settings": {
+        "color_scheme": "cloud",
+        "content_position": false,
+        "content_alignment": "top",
+        "title": "<p>About Van Life</p>",
+        "description": "<p>Vanlife US is ran by a small team located across the US. There's nothing more freeing than being out on the road and that's why we want to give someone the chance to win a restored  1978 Volkswagen Westfalia Camper Van. And to add some sugar... $20k cash to enjoy her.</p><p></p><p>We also deeply care about the environment, especially with what's happening in the world at the moment. That's why a portion of all sales goes to support Conservation Northwest. Read more about what they're doing below.</p><p></p><p>If you wanna say hi, chuck us a message on socials! </p><p></p><p>Goodluck! - Mak and the Vanlife team</p>",
+        "button_text": "Check more",
+        "button_url": "#",
+        "image": "shopify://shop_images/IMG_8104.webp"
+      }
     }
   },
-  "order": ["hero_ywXn9V", "featured_products_LEUHp4"]
+  "order": ["hero_ywXn9V", "featured_products_LEUHp4", "fifty_fifty_hi7bnt"]
 }
