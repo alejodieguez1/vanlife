@@ -4,9 +4,9 @@
       , desktop_image: product.featured_image
       , mobile_image: product.featured_image %}
   </a>
-  <div class="p-4 grid gap-5 bg-white rounded-t-xl overflow-hidden z-10 border border-dark-gray">
+  <div class="p-4 grid gap-5 bg-white rounded-xl overflow-hidden z-10">
     <div class="grid">
-      <a href="{{ product.url }}" class="h5 font-heading italic">{{ product.title }}</a>
+      <a href="{{ product.url }}" class="h5">{{ product.title }}</a>
       <div class="flex">
         <div class="flex gap-2">
           <span>{{ product.price | money_without_trailing_zeros }}</span>

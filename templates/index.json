@@ -63,14 +63,11 @@
       "name": "Easy Entries",
       "settings": {
         "title": "<p>Want some easy entries?</p>",
-        "description": "Buy them in the easiest wat possible and get more chances to win!",
+        "description": "Buy them in the easiest way possible and get more chances to win!",
         "button_text": "Shop All",
         "button_url": "shopify://collections"
       }
     }
   },
-  "order": [
-    "hero_ywXn9V",
-    "featured_products_LEUHp4"
-  ]
+  "order": ["hero_ywXn9V", "featured_products_LEUHp4"]
 }
