@@ -703,12 +703,12 @@ html {
   display: none;
 }
 
-.aspect-\[0\.8\] {
-  aspect-ratio: 0.8;
+.aspect-\[0\.7\] {
+  aspect-ratio: 0.7;
 }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
+.aspect-\[0\.8\] {
+  aspect-ratio: 0.8;
 }
 
 .h-10 {
@@ -2026,6 +2026,11 @@ carousel-pager button.active,
     padding-right: 0px;
   }
 
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .md\:pt-\[70\%\] {
     padding-top: 70%;
   }
@@ -2058,6 +2063,10 @@ carousel-pager button.active,
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:aspect-square {
+    aspect-ratio: 1 / 1;
   }
 
   .lg\:h-full {

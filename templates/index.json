@@ -81,7 +81,71 @@
         "button_url": "#",
         "image": "shopify://shop_images/IMG_8104.webp"
       }
+    },
+    "reviews_TLXj8L": {
+      "type": "reviews",
+      "blocks": {
+        "review_rYqLay": {
+          "type": "review",
+          "settings": {
+            "customer": "Brandon Morton",
+            "review": "My girlfriend bought me a shirt from these guys, and I absolutely love it! Fits well(which is usually my biggest problem since I’m built slightly different than most), and the graphic is really classic/kind of vintage looking. Makes me feel like I should already be driving that incredible VW bus they have for their giveaway, in some 70’s style shorts and a headband with aviators on.",
+            "image": "shopify://shop_images/unnamed.png"
+          }
+        },
+        "review_KW6aLD": {
+          "type": "review",
+          "settings": {
+            "customer": "Mariah Lucero",
+            "review": "Absolutely love everything I got from Vanlife! I grabbed a few of the retro sticker packs along with some raffle bundles (fingers crossed on that van 👀), and I’m seriously impressed.",
+            "image": "shopify://shop_images/2222222.png"
+          }
+        },
+        "review_dkXWpd": {
+          "type": "review",
+          "settings": {
+            "customer": "Kelly Gadomski",
+            "review": "Love what this company is doing and what it stands for!",
+            "image": "shopify://shop_images/2222.png"
+          }
+        },
+        "review_BAWyp6": {
+          "type": "review",
+          "settings": {
+            "customer": "Barry Arthur",
+            "review": "Very nice business.  Protecting wildlands and wildlife is a great mission!",
+            "image": "shopify://shop_images/w2222.png"
+          }
+        },
+        "review_wVDWAW": {
+          "type": "review",
+          "settings": {
+            "customer": "Kirsten Grant",
+            "review": "Love the products and their style!!!",
+            "image": "shopify://shop_images/44444.png"
+          }
+        }
+      },
+      "block_order": [
+        "review_rYqLay",
+        "review_KW6aLD",
+        "review_dkXWpd",
+        "review_BAWyp6",
+        "review_wVDWAW"
+      ],
+      "name": "Reviews Carousel",
+      "settings": {
+        "title": "<p>What customers say about us</p>",
+        "description": "Take a look into our customer reviews",
+        "button_text": "",
+        "button_url": ""
+      }
     }
   },
-  "order": ["hero_ywXn9V", "featured_products_LEUHp4", "fifty_fifty_hi7bnt"]
+  "order": [
+    "hero_ywXn9V",
+    "featured_products_LEUHp4",
+    "fifty_fifty_hi7bnt",
+    "reviews_TLXj8L"
+  ]
 }

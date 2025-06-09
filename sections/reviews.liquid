@@ -7,7 +7,7 @@
     data-config="{{ config | escape }}"
     id="{{ section.id }}"
     data-id="{{ section.id }}">
-    <div class="flex justify-between items-center lg:px-12 w-full max-w-[1440px] mx-auto mb-10 lg:mb-16">
+    <div class="flex justify-between items-center md:px-4 lg:px-12 w-full max-w-[1440px] mx-auto mb-10 lg:mb-16">
       <div>
         <h2 class="h2">{{ settings.title }}</h2>
         {% if settings.description %}
@@ -31,7 +31,7 @@
       <div class="swiper-wrapper">
         {% for block in section.blocks %}
           {% assign block_settings = block.settings %}
-          <div class="swiper-slide w-full bg-white p-4 py-8 rounded-xl overflow-hidden h-full flex flex-col aspect-square">
+          <div class="swiper-slide w-full bg-white p-4 py-8 rounded-xl overflow-hidden h-full flex flex-col aspect-[0.7] lg:aspect-square">
             <div class="grid content-center gap-5 flex-grow">
                 <div class="flex items-center justify-center gap-1 text-[#818308]">
                     {% for item in (1..5) %}
@@ -111,7 +111,13 @@
     ],
     "presets": [
       {
-        "name": "Reviews Carousel"
+        "name": "Reviews Carousel",
+              "settings": {
+        "title": "<p>What customers say about us</p>",
+        "description": "Take a look into our customer reviews",
+        "button_text": "",
+        "button_url": ""
+      }
       }
     ]
   }
