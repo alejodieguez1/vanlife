@@ -84,7 +84,7 @@ input[type="search"]::-webkit-search-results-decoration {
   @apply h-[60px] px-5 flex items-center justify-center uppercase text-xs sm:text-sm bg-dark-gray text-white rounded-full transition-all duration-200 cursor-pointer;
 }
 .button--grass {
-  @apply h-[60px] px-5 flex items-center justify-center uppercase text-xs sm:text-sm bg-grass text-white rounded-full transition-all duration-200 cursor-pointer;
+  @apply h-[60px] px-5 flex items-center justify-center uppercase text-xs sm:text-sm bg-[#818308] text-white rounded-full transition-all duration-200 cursor-pointer;
 }
 
 .button--chocolate {

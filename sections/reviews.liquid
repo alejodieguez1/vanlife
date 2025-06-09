@@ -1,0 +1,118 @@
+{% assign settings = section.settings %}
+{%- assign config = '{"loop": true, "centeredSlides": true,  "slidesPerView": 1,"spaceBetween": 24, "breakpoints": {"768": {"slidesPerView": 2,"spaceBetween": 16}, "1024": {"slidesPerView": 3.3, "spaceBetween": 48, "slidesOffsetBefore": 48, "slidesOffsetAfter": 48}, "1200": {"slidesPerView": 3, "spaceBetween": 48, "slidesOffsetBefore": 48, "slidesOffsetAfter": 48} }}' -%}
+
+
+<div class="py-10 lg:py-20 px-4 md:px-0 bg-cloud">
+  <site-carousel
+    data-config="{{ config | escape }}"
+    id="{{ section.id }}"
+    data-id="{{ section.id }}">
+    <div class="flex justify-between items-center lg:px-12 w-full max-w-[1440px] mx-auto mb-10 lg:mb-16">
+      <div>
+        <h2 class="h2">{{ settings.title }}</h2>
+        {% if settings.description %}
+          <p class="text-lg mt-2">{{ settings.description }}</p>
+        {% endif %}
+      </div>
+      <div class="hidden lg:flex items-center gap-3">
+        <carousel-prev>
+          <button class="prev button--grass lg:hover:opacity-60 transition-all duration-200">
+            <div class="transform rotate-180">{% render 'icon-arrow-right' %}</div>
+          </button>
+        </carousel-prev>
+        <carousel-next>
+          <button class="next button--grass lg:hover:opacity-60 transition-all duration-200">
+            {% render 'icon-arrow-right' %}
+          </button>
+        </carousel-next>
+      </div>
+    </div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% assign block_settings = block.settings %}
+          <div class="swiper-slide w-full bg-white p-4 py-8 rounded-xl overflow-hidden h-full flex flex-col aspect-square">
+            <div class="grid content-center gap-5 flex-grow">
+                <div class="flex items-center justify-center gap-1 text-[#818308]">
+                    {% for item in (1..5) %}
+                        {% render 'icon-star' %}
+                    {% endfor %}
+                </div>
+              <div class="relative pt-[30%]">{% render 'media-component'
+, desktop_image: block_settings.image
+, mobile_image: block_settings.image
+, contain: true %}</div>
+              <span class="mx-auto w-fit font-body-bold text-xl lg:text-2xl">{{ block_settings.customer }}</span>
+              <div class="text-sm lg:text-base px-5 text-center">{{ block_settings.review }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="flex items-center justify-between gap-6 mt-10 lg:mt-16">
+      <div class="swiper-pagination carousel-pager flex items-center gap-2 !bottom-[unset]"></div>
+    </div>
+  </site-carousel>
+
+  {% unless settings.button_text == blank or settings.button_url == blank %}
+    {% render 'button'
+      , button_text: settings.button_text
+      , button_url: settings.button_url
+      , button_class: 'grass'
+      , custom_class: 'mx-auto' %}
+  {% endunless %}
+</div>
+
+{% schema %}
+  {
+    "name": "Reviews Carousel",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Título"
+      }, {
+        "type": "text",
+        "id": "description",
+        "label": "Descripción"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Texto del botón",
+        "info": "Texto que se mostrará en el botón de la sección, si no se especifica junto al link, no se mostrará el botón"
+      }, {
+        "type": "url",
+        "id": "button_url",
+        "label": "Línk del botón",
+        "info": "URL a la que se dirigirá el botón"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "review",
+        "name": "Review",
+        "settings": [
+          {
+            "type": "text",
+            "id": "customer",
+            "label": "Customer Name"
+          }, {
+            "type": "text",
+            "id": "review",
+            "label": "Review Text"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Customer Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Reviews Carousel"
+      }
+    ]
+  }
+{% endschema %}
