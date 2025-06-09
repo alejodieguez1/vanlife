@@ -23,7 +23,12 @@
           {% endfor %}
         </div>
         <div class="w-16 lg:w-24 absolute left-1/2 -translate-x-1/2">
-          <a href="/" class="block">{% render 'logo' %}</a>
+          <a
+            href="/"
+            class="block"
+            aria-label="Logo">
+            <span class="sr-only">Shop Logo</span>
+            {% render 'logo' %}</a>
         </div>
         <button class="lg:hover:opacity-50 lg:transition-all lg:duration-500">{% render 'icon-cart' %}</button>
       </div>
@@ -31,11 +36,6 @@
   </div>
   {% render 'mobile-menu'
     , menus: section.settings.menu
-    , wp_url: settings.wp_url
-    , ig_url: settings.ig_url
-    , tk_url: settings.tk_url
-    , fb_url: settings.fb_url
-    , x_url: settings.x_url
     , cta_url: settings.cta_url
     , cta_text: settings.cta_text
   %}

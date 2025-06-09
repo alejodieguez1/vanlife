@@ -11,7 +11,10 @@
 %}
 
 {% if button_url %}
-  <a href="{{ button_url }}" class="w-48 h-14 p-1 relative group {{ button_classes }} rounded-full overflow-hidden {{ custom_class }}">
+  <a
+    href="{{ button_url }}"
+    class="w-48 h-14 p-1 relative group {{ button_classes }} rounded-full overflow-hidden {{ custom_class }}"
+    aria-label="{{ button_text }}">
     <div class="rounded-full w-full h-full flex items-center justify-center relative z-10 uppercase text-sm">
       <span>{{ button_text }}</span>
     </div>
